@@ -26,7 +26,7 @@ async function verifyJwt(jwt) {
     var host = amurlObject.host;
     var protocol = amurlObject.protocol;
   
-    if(!protocol.startsWith('https') || !host.includes('microsoft.com')) {
+    if(!protocol.startsWith('https') || !host.includes('microsoft.com')|| !host.includes('office365.com')) {
       var errMsg = 'Unauthorized source of public key: ' + amurl + '. It must be https and with microsoft.com in its hostname';
       console.log(errMsg);
       throw (new Error(errMsg));
